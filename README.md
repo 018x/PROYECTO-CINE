@@ -8,7 +8,7 @@ Nuestro proyecto abarca varios aspectos claves:
 
  1. Usuarios y Permisos:
  
-  *Administrador con permisos para crear, eliminar funciones y agregar/quitar peliculas y salas
+     *Administrador con permisos para crear, eliminar funciones y agregar/quitar peliculas y salas
 
  2. Autenticacion:
  
