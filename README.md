@@ -12,7 +12,7 @@ Nuestro proyecto abarca varios aspectos claves:
 
  2. Autenticacion:
  
-     *Implementacion de un sistema de inicio de sesion para gestionar usuarios 
+      *Implementacion de un sistema de inicio de sesion para gestionar usuarios 
 
  3. Tablas:
  
