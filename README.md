@@ -7,6 +7,7 @@ Proyecto de la realizacion de un cine en MYSQL
 Nuestro proyecto abarca varios aspectos claves:
 
  1.Usuarios y Permisos:
+ 
  *Administrador con permisos para crear, eliminar funciones y agregar/quitar peliculas y salas
 
  2.Autenticacion:
