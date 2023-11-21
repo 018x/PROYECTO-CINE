@@ -37,11 +37,8 @@ Nuestro proyecto abarca varios aspectos claves:
  *Diseño de un formato de boleto que incluya informacion crucial como horario, sala, pelicula y cantidad de personas
   
 
-## Visuales
-
-Capturas de pantalla, videos o GIFs que demuestran lo que hace el proyecto y cómo usarlo.
 
 ## Empezando 🚀
 
-Estas instrucciones te guiarán para obtener una copia de este proyecto en funcionamiento en tu máquina local para propósitos de desarrollo y pruebas.
+Por primera vez empezamos a hacer lo que es el driagrama en MYSQL ya que esta nos servira para despues poder programarlo y asi hacer entidades y funciones en mysql
 
