@@ -1,0 +1,259 @@
+package Pack;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.Scanner;
+import javax.swing.JOptionPane;
+
+public class Conection {
+    String driver = "com.mysql.cj.jdbc.Driver";
+    String url = "jdbc:mysql://localhost:3306/cinehut?autoReconnect=true&useSSL=false";
+    String user = "root";
+    String password = "TokyoGhou7";
+    Connection conn = null;
+    PreparedStatement ps = null;
+    ResultSet rs = null;
+
+    public Conection() {
+        try {
+            Class.forName(driver);
+            conn = DriverManager.getConnection(url, user, password);
+
+            if (conn != null) {
+                System.out.println("Conexión exitosa.");
+            }
+        } catch (ClassNotFoundException | SQLException e) {
+            e.printStackTrace();
+            JOptionPane.showMessageDialog(null, "Error al intentar establecer la conexión: " + e.getMessage());
+        }
+    }
+
+    public void consultarPelicula() {
+        try {
+            // Realizar la consulta
+            ps = conn.prepareStatement("SELECT * FROM peliculas WHERE peliculas_id=?");
+            ps.setInt(1, 7);
+            rs = ps.executeQuery();
+
+            // Mostrar resultados 
+            while (rs.next()) {
+                int peliculas_id = rs.getInt(1);
+                String titulo = rs.getString(2);
+                int duracion = rs.getInt(3);
+                String clasificacion = rs.getString(4);
+
+                System.out.println("Id de la pelicula: " + peliculas_id);
+                System.out.println("titulo de la pelicula: " + titulo);
+                System.out.println("duracion de la pelicula: " + duracion);
+                System.out.println("clasificacion de la pelicula: " + clasificacion);
+                System.out.println();
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+            JOptionPane.showMessageDialog(null, "Error al intentar consultar películas: " + e.getMessage());
+        }
+    }
+    
+    public void insertarPelicula(String titulo, int duracion, String clasificacion) {
+    try {
+        // Verificar si la conexión es exitosa
+        if (conn != null) {
+            // Preparar la consulta para insertar una nueva película
+            String insertQuery = "INSERT INTO peliculas (titulo, duracion, clasificacion) VALUES (?, ?, ?)";
+            
+            // Utilizar un PreparedStatement para evitar SQL Injection
+            ps = conn.prepareStatement(insertQuery);
+            ps.setString(1, titulo);
+            ps.setInt(2, duracion);
+            ps.setString(3, clasificacion);
+            
+            // Ejecutar la actualización en la base de datos
+            ps.executeUpdate();
+            
+            System.out.println("Película agregada exitosamente.");
+        }
+    } catch (SQLException e) {
+        e.printStackTrace();
+        JOptionPane.showMessageDialog(null, "Error al intentar agregar película: " + e.getMessage());
+    } finally {
+        // Cerrar recursos
+        try {
+            if (ps != null) ps.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+}
+
+    
+        public void agregarCombo(String nombre, double precio) {
+        try {
+            // Verificar si la conexión es exitosa
+            if (conn != null) {
+                // Preparar la consulta para insertar un nuevo combo
+                String insertQuery = "INSERT INTO combos (nombre, precio) VALUES (?, ?)";
+                
+                // Utilizar un PreparedStatement para evitar SQL Injection
+                ps = conn.prepareStatement(insertQuery);
+                ps.setString(1, nombre);
+                ps.setDouble(2, precio);
+                
+                // Ejecutar la actualización en la base de datos
+                ps.executeUpdate();
+                
+                System.out.println("Combo agregado exitosamente.");
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+            JOptionPane.showMessageDialog(null, "Error al intentar agregar combo: " + e.getMessage());
+        } finally {
+            // Cerrar recursos
+            try {
+                if (ps != null) ps.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+        
+        public boolean autenticarUsuario(String nombre, String contraseña) {
+        try {
+            // Verificar si la conexión es exitosa
+            if (conn != null) {
+                // Preparar la consulta para autenticar al usuario
+                String authQuery = "SELECT id_niveles FROM usuarios WHERE nombre=? AND contraseña=?";
+                
+                // Utilizar un PreparedStatement para evitar SQL Injection
+                ps = conn.prepareStatement(authQuery);
+                ps.setString(1, nombre);
+                ps.setString(2, contraseña);
+                
+                // Ejecutar la consulta en la base de datos
+                rs = ps.executeQuery();
+                
+                // Verificar si se encontró un usuario con las credenciales proporcionadas
+                if (rs.next()) {
+                    int niveles_id = rs.getInt("id_niveles");
+                    
+                    // Verificar el nivel de acceso y realizar acciones según sea necesario
+                    if (niveles_id == 1) {
+                        System.out.println("¡Bienvenido! Usuario de nivel 1.");
+                        // Aquí puedes llamar a métodos específicos permitidos para usuarios de nivel 1
+                        return true;
+                    } else {
+                        System.out.println("¡Bienvenido! Otro nivel de usuario.");
+                        // Aquí puedes realizar acciones para otros niveles de usuario
+                        return true;
+                    }
+                } else {
+                    System.out.println("Credenciales incorrectas. Inténtalo de nuevo.");
+                    return false;
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+            JOptionPane.showMessageDialog(null, "Error al intentar autenticar usuario: " + e.getMessage());
+        } finally {
+            // Cerrar recursos
+            try {
+                if (rs != null) rs.close();
+                if (ps != null) ps.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+
+        return false;
+    }
+
+    public void cerrarConexion() {
+        try {
+            if (rs != null) rs.close();
+            if (ps != null) ps.close();
+            if (conn != null) conn.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+    
+    public static void main(String args[]) {
+    Conection cl = new Conection();
+    Scanner scanner = new Scanner(System.in);
+
+    // Solicitar autenticación del usuario al principio
+    System.out.print("Ingrese su nombre de usuario: ");
+    String nombre = scanner.nextLine();
+
+    System.out.print("Ingrese su contraseña: ");
+    String contraseña = scanner.nextLine();
+
+    if (!cl.autenticarUsuario(nombre, contraseña)) {
+        // Si la autenticación falla, salir del programa
+        System.out.println("Credenciales incorrectas. Saliendo del programa.");
+        scanner.close();
+        return;
+    }
+
+
+    System.out.println("1. Agregar Película");
+    System.out.println("2. Agregar Combo");
+    System.out.println("3. Salir");
+
+    System.out.print("Seleccione una opción: ");
+
+    int opcion = scanner.nextInt();
+    switch (opcion) {
+        case 1:
+            // Solicitar datos para agregar película
+            System.out.print("Ingrese el título: ");
+            scanner.nextLine();  // Consumir el salto de línea pendiente
+            String titulo = scanner.nextLine();
+
+            System.out.print("Ingrese la duración: ");
+            int duracion;
+            try {
+                duracion = Integer.parseInt(scanner.nextLine());  // Convertir a entero
+            } catch (NumberFormatException e) {
+                System.out.println("Error: Ingresa un número válido para la duración.");
+                break;
+            }
+            System.out.print("Ingrese la clasificación: ");
+            String clasificacion = scanner.nextLine();
+
+            cl.insertarPelicula(titulo, duracion, clasificacion);
+            break;
+
+        case 2:
+            // Solicitar datos para agregar combo
+            System.out.print("Ingrese el nombre del combo: ");
+            scanner.nextLine();  // Consumir el salto de línea pendiente
+            String nombreCombo = scanner.nextLine();
+
+            System.out.print("Ingrese el precio del combo: ");
+            double precioCombo;
+            try {
+                precioCombo = Double.parseDouble(scanner.nextLine());  // Convertir a double
+            } catch (NumberFormatException e) {
+                System.out.println("Error: Ingresa un número válido para el precio del combo.");
+                break;
+            }
+            cl.agregarCombo(nombreCombo, precioCombo);
+            break;
+
+        case 3:
+            System.out.println("Saliendo del programa.");
+            break;
+
+        default:
+            System.out.println("Opción no válida.");
+    }
+
+    scanner.close();
+}
+
+
+
+}
