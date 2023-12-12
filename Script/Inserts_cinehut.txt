@@ -1,0 +1,253 @@
+SELECT * FROM usuarios;
+INSERT INTO usuarios(nombre, contraseña, id_niveles) VALUES ('Administrador', 'cinema', 1);
+INSERT INTO usuarios(nombre, contraseña, id_niveles) VALUES ('Empleado', 'esclavo', 2);
+
+
+SELECT * FROM niveles;
+INSERT INTO niveles(nombre) VALUES('NIVEL 1'); 
+INSERT INTO niveles(nombre) VALUES('NIVEL 2');
+
+
+SELECT * FROM productos;
+INSERT INTO productos (nombre, precio) VALUES ('Palomitas regulares', 29.99);
+INSERT INTO productos (nombre, precio) VALUES ('Palomitas grandes', 39.99);
+INSERT INTO productos (nombre, precio) VALUES ('Refresco Grande', 24.99);
+INSERT INTO productos (nombre, precio) VALUES ('Refresco regular', 19.99);
+INSERT INTO productos (nombre, precio) VALUES ('Nachos con Queso', 24.99);
+INSERT INTO productos (nombre, precio) VALUES ('Hot dog', 24.99);
+
+SELECT * FROM peliculas;
+INSERT INTO peliculas (`titulo`, `duracion`, `clasificacion`) VALUES ('Five Nights At Freddy´s', 120, 'PG-13 +13 B+13');
+INSERT INTO peliculas (`titulo`, `duracion`, `clasificacion`) VALUES ('Super Mario Bros la pelicula', 92, 'PG');
+INSERT INTO peliculas (`titulo`, `duracion`, `clasificacion`) VALUES ('Napoleon', 151, 'R');
+INSERT INTO peliculas (`titulo`, `duracion`, `clasificacion`) VALUES ('Blue Beetle', 127, 'PG-13');
+INSERT INTO peliculas (`titulo`, `duracion`, `clasificacion`) VALUES ('Oppenheimer', 180, '+13 B15 U/A');
+INSERT INTO peliculas (`titulo`, `duracion`, `clasificacion`) VALUES ('Barbie', 114, 'PG-13');
+
+SELECT * FROM salas;
+INSERT INTO salas (`nombre`, `disponibilidad`) VALUES ('Sala 1', 10);
+INSERT INTO salas (`nombre`, `disponibilidad`) VALUES ('Sala 2', 10);
+INSERT INTO salas (`nombre`, `disponibilidad`) VALUES ('Sala 3', 10);
+INSERT INTO salas (`nombre`, `disponibilidad`) VALUES ('Sala 4', 10);
+INSERT INTO salas (`nombre`, `disponibilidad`) VALUES ('Sala 5', 10);
+INSERT INTO salas (`nombre`, `disponibilidad`) VALUES ('Sala 6', 10);
+INSERT INTO salas (`nombre`, `disponibilidad`) VALUES ('Sala 7', 10);
+INSERT INTO salas (`nombre`, `disponibilidad`) VALUES ('Sala 8', 10);
+INSERT INTO salas (`nombre`, `disponibilidad`) VALUES ('Sala 9', 10);
+INSERT INTO salas (`nombre`, `disponibilidad`) VALUES ('Sala 10', 10);
+
+SELECT * FROM funciones;
+INSERT INTO funciones (id_pelicula, id_salas, fecha_hrs) VALUES (1, 1, '2023-12-01 12:00:00');
+INSERT INTO funciones (id_pelicula, id_salas, fecha_hrs) VALUES (2, 1, '2023-12-01 14:00:00');
+INSERT INTO funciones (id_pelicula, id_salas, fecha_hrs) VALUES (3, 1, '2023-12-01 16:00:00');
+INSERT INTO funciones (id_pelicula, id_salas, fecha_hrs) VALUES (4, 1, '2023-12-01 18:00:00');
+INSERT INTO funciones (id_pelicula, id_salas, fecha_hrs) VALUES (5, 1, '2023-12-01 20:00:00');
+INSERT INTO funciones (id_pelicula, id_salas, fecha_hrs) VALUES (6, 1, '2023-12-01 22:00:00');
+
+
+INSERT INTO funciones (id_pelicula, id_salas, fecha_hrs) VALUES (1, 2, '2023-12-01 12:00:00');
+INSERT INTO funciones (id_pelicula, id_salas, fecha_hrs) VALUES (2, 2, '2023-12-01 14:00:00');
+INSERT INTO funciones (id_pelicula, id_salas, fecha_hrs) VALUES (3, 2, '2023-12-01 16:00:00');
+INSERT INTO funciones (id_pelicula, id_salas, fecha_hrs) VALUES (4, 2, '2023-12-01 18:00:00');
+INSERT INTO funciones (id_pelicula, id_salas, fecha_hrs) VALUES (5, 2, '2023-12-01 20:00:00');
+INSERT INTO funciones (id_pelicula, id_salas, fecha_hrs) VALUES (6, 2, '2023-12-01 22:00:00');
+
+
+INSERT INTO funciones (id_pelicula, id_salas, fecha_hrs) VALUES (1, 3, '2023-12-01 12:00:00');
+INSERT INTO funciones (id_pelicula, id_salas, fecha_hrs) VALUES (2, 3, '2023-12-01 14:00:00');
+INSERT INTO funciones (id_pelicula, id_salas, fecha_hrs) VALUES (3, 3, '2023-12-01 16:00:00');
+INSERT INTO funciones (id_pelicula, id_salas, fecha_hrs) VALUES (4, 3, '2023-12-01 18:00:00');
+INSERT INTO funciones (id_pelicula, id_salas, fecha_hrs) VALUES (5, 3, '2023-12-01 20:00:00');
+INSERT INTO funciones (id_pelicula, id_salas, fecha_hrs) VALUES (6, 3, '2023-12-01 22:00:00');
+
+
+INSERT INTO funciones (id_pelicula, id_salas, fecha_hrs) VALUES (1, 4, '2023-12-01 12:00:00');
+INSERT INTO funciones (id_pelicula, id_salas, fecha_hrs) VALUES (2, 4, '2023-12-01 14:00:00');
+INSERT INTO funciones (id_pelicula, id_salas, fecha_hrs) VALUES (3, 4, '2023-12-01 16:00:00');
+INSERT INTO funciones (id_pelicula, id_salas, fecha_hrs) VALUES (4, 4, '2023-12-01 18:00:00');
+INSERT INTO funciones (id_pelicula, id_salas, fecha_hrs) VALUES (5, 4, '2023-12-01 20:00:00');
+INSERT INTO funciones (id_pelicula, id_salas, fecha_hrs) VALUES (6, 4, '2023-12-01 22:00:00');
+
+INSERT INTO funciones (id_pelicula, id_salas, fecha_hrs) VALUES (1, 5, '2023-12-01 12:00:00');
+INSERT INTO funciones (id_pelicula, id_salas, fecha_hrs) VALUES (2, 5, '2023-12-01 14:00:00');
+INSERT INTO funciones (id_pelicula, id_salas, fecha_hrs) VALUES (3, 5, '2023-12-01 16:00:00');
+INSERT INTO funciones (id_pelicula, id_salas, fecha_hrs) VALUES (4, 5, '2023-12-01 18:00:00');
+INSERT INTO funciones (id_pelicula, id_salas, fecha_hrs) VALUES (5, 5, '2023-12-01 20:00:00');
+INSERT INTO funciones (id_pelicula, id_salas, fecha_hrs) VALUES (6, 5, '2023-12-01 22:00:00');
+
+INSERT INTO funciones (id_pelicula, id_salas, fecha_hrs) VALUES (1, 6, '2023-12-01 12:00:00');
+INSERT INTO funciones (id_pelicula, id_salas, fecha_hrs) VALUES (2, 6, '2023-12-01 14:00:00');
+INSERT INTO funciones (id_pelicula, id_salas, fecha_hrs) VALUES (3, 6, '2023-12-01 16:00:00');
+INSERT INTO funciones (id_pelicula, id_salas, fecha_hrs) VALUES (4, 6, '2023-12-01 18:00:00');
+INSERT INTO funciones (id_pelicula, id_salas, fecha_hrs) VALUES (5, 6, '2023-12-01 20:00:00');
+INSERT INTO funciones (id_pelicula, id_salas, fecha_hrs) VALUES (6, 6, '2023-12-01 22:00:00');
+
+INSERT INTO funciones (id_pelicula, id_salas, fecha_hrs) VALUES (1, 7, '2023-12-01 12:00:00');
+INSERT INTO funciones (id_pelicula, id_salas, fecha_hrs) VALUES (2, 7, '2023-12-01 14:00:00');
+INSERT INTO funciones (id_pelicula, id_salas, fecha_hrs) VALUES (3, 7, '2023-12-01 16:00:00');
+INSERT INTO funciones (id_pelicula, id_salas, fecha_hrs) VALUES (4, 7, '2023-12-01 18:00:00');
+INSERT INTO funciones (id_pelicula, id_salas, fecha_hrs) VALUES (5, 7, '2023-12-01 20:00:00');
+INSERT INTO funciones (id_pelicula, id_salas, fecha_hrs) VALUES (6, 7, '2023-12-01 22:00:00');
+
+INSERT INTO funciones (id_pelicula, id_salas, fecha_hrs) VALUES (1, 8, '2023-12-01 12:00:00');
+INSERT INTO funciones (id_pelicula, id_salas, fecha_hrs) VALUES (2, 8, '2023-12-01 14:00:00');
+INSERT INTO funciones (id_pelicula, id_salas, fecha_hrs) VALUES (3, 8, '2023-12-01 16:00:00');
+INSERT INTO funciones (id_pelicula, id_salas, fecha_hrs) VALUES (4, 8, '2023-12-01 18:00:00');
+INSERT INTO funciones (id_pelicula, id_salas, fecha_hrs) VALUES (5, 8, '2023-12-01 20:00:00');
+INSERT INTO funciones (id_pelicula, id_salas, fecha_hrs) VALUES (6, 8, '2023-12-01 22:00:00');
+
+INSERT INTO funciones (id_pelicula, id_salas, fecha_hrs) VALUES (1, 9, '2023-12-01 12:00:00');
+INSERT INTO funciones (id_pelicula, id_salas, fecha_hrs) VALUES (2, 9, '2023-12-01 14:00:00');
+INSERT INTO funciones (id_pelicula, id_salas, fecha_hrs) VALUES (3, 9, '2023-12-01 16:00:00');
+INSERT INTO funciones (id_pelicula, id_salas, fecha_hrs) VALUES (4, 9, '2023-12-01 18:00:00');
+INSERT INTO funciones (id_pelicula, id_salas, fecha_hrs) VALUES (5, 9, '2023-12-01 20:00:00');
+INSERT INTO funciones (id_pelicula, id_salas, fecha_hrs) VALUES (6, 9, '2023-12-01 22:00:00');
+
+INSERT INTO funciones (id_pelicula, id_salas, fecha_hrs) VALUES (1, 10, '2023-12-01 12:00:00');
+INSERT INTO funciones (id_pelicula, id_salas, fecha_hrs) VALUES (2, 10, '2023-12-01 14:00:00');
+INSERT INTO funciones (id_pelicula, id_salas, fecha_hrs) VALUES (3, 10, '2023-12-01 16:00:00');
+INSERT INTO funciones (id_pelicula, id_salas, fecha_hrs) VALUES (4, 10, '2023-12-01 18:00:00');
+INSERT INTO funciones (id_pelicula, id_salas, fecha_hrs) VALUES (5, 10, '2023-12-01 20:00:00');
+INSERT INTO funciones (id_pelicula, id_salas, fecha_hrs) VALUES (6, 10, '2023-12-01 22:00:00');
+
+
+
+SELECT * FROM combos;
+INSERT INTO combos (nombre, precio) VALUES('Refresco y Palomitas Regulares', 44.99);
+INSERT INTO combos (nombre, precio) VALUES('Refresco y Hot Dog', 39.99);
+INSERT INTO combos (nombre, precio) VALUES('Hot dog y Palomitas', 44.99);
+INSERT INTO combos (nombre, precio) VALUES('Nachos y Palomitas', 39.99);
+INSERT INTO combos (nombre, precio) VALUES('Hot dog y Nachos', 39.99);
+INSERT INTO combos (nombre, precio) VALUES('Nachos, palomitas y refresco', 69.99);
+INSERT INTO combos (nombre, precio) VALUES('Refresco y nachos', 39.99);
+
+SELECT * FROM boletos;
+INSERT INTO boletos (id_funciones, num_asiento, precio) VALUES(1, 1, 49.99);
+INSERT INTO boletos (id_funciones, num_asiento, precio) VALUES(2, 2, 49.99);
+INSERT INTO boletos (id_funciones, num_asiento, precio) VALUES(3, 3, 49.99);
+INSERT INTO boletos (id_funciones, num_asiento, precio) VALUES(4, 4, 49.99);
+INSERT INTO boletos (id_funciones, num_asiento, precio) VALUES(5, 5, 49.99);
+INSERT INTO boletos (id_funciones, num_asiento, precio) VALUES(6, 6, 49.99);
+INSERT INTO boletos (id_funciones, num_asiento, precio) VALUES(7, 7, 49.99);
+INSERT INTO boletos (id_funciones, num_asiento, precio) VALUES(8, 8, 49.99);
+INSERT INTO boletos (id_funciones, num_asiento, precio) VALUES(9, 9, 49.99);
+INSERT INTO boletos (id_funciones, num_asiento, precio) VALUES(10, 10, 49.99);
+
+SELECT * FROM boletos;
+INSERT INTO boletos (id_funciones, num_asiento, precio) VALUES(1, 1, 49.99);
+INSERT INTO boletos (id_funciones, num_asiento, precio) VALUES(1, 2, 49.99);
+INSERT INTO boletos (id_funciones, num_asiento, precio) VALUES(1, 3, 49.99);
+INSERT INTO boletos (id_funciones, num_asiento, precio) VALUES(1, 4, 49.99);
+INSERT INTO boletos (id_funciones, num_asiento, precio) VALUES(1, 5, 49.99);
+INSERT INTO boletos (id_funciones, num_asiento, precio) VALUES(1, 6, 49.99);
+INSERT INTO boletos (id_funciones, num_asiento, precio) VALUES(1, 7, 49.99);
+INSERT INTO boletos (id_funciones, num_asiento, precio) VALUES(1, 8, 49.99);
+INSERT INTO boletos (id_funciones, num_asiento, precio) VALUES(1, 9, 49.99);
+INSERT INTO boletos (id_funciones, num_asiento, precio) VALUES(1, 10, 49.99);
+
+
+INSERT INTO boletos (id_funciones, num_asiento, precio) VALUES(2, 1, 49.99);
+INSERT INTO boletos (id_funciones, num_asiento, precio) VALUES(2, 2, 49.99);
+INSERT INTO boletos (id_funciones, num_asiento, precio) VALUES(2, 3, 49.99);
+INSERT INTO boletos (id_funciones, num_asiento, precio) VALUES(2, 4, 49.99);
+INSERT INTO boletos (id_funciones, num_asiento, precio) VALUES(2, 5, 49.99);
+INSERT INTO boletos (id_funciones, num_asiento, precio) VALUES(2, 6, 49.99);
+INSERT INTO boletos (id_funciones, num_asiento, precio) VALUES(2, 7, 49.99);
+INSERT INTO boletos (id_funciones, num_asiento, precio) VALUES(2, 8, 49.99);
+INSERT INTO boletos (id_funciones, num_asiento, precio) VALUES(2, 9, 49.99);
+INSERT INTO boletos (id_funciones, num_asiento, precio) VALUES(2, 10, 49.99);
+
+
+INSERT INTO boletos (id_funciones, num_asiento, precio) VALUES(3, 1, 49.99);
+INSERT INTO boletos (id_funciones, num_asiento, precio) VALUES(3, 2, 49.99);
+INSERT INTO boletos (id_funciones, num_asiento, precio) VALUES(3, 3, 49.99);
+INSERT INTO boletos (id_funciones, num_asiento, precio) VALUES(3, 4, 49.99);
+INSERT INTO boletos (id_funciones, num_asiento, precio) VALUES(3, 5, 49.99);
+INSERT INTO boletos (id_funciones, num_asiento, precio) VALUES(3, 6, 49.99);
+INSERT INTO boletos (id_funciones, num_asiento, precio) VALUES(3, 7, 49.99);
+INSERT INTO boletos (id_funciones, num_asiento, precio) VALUES(3, 8, 49.99);
+INSERT INTO boletos (id_funciones, num_asiento, precio) VALUES(3, 9, 49.99);
+INSERT INTO boletos (id_funciones, num_asiento, precio) VALUES(3, 10, 49.99);
+
+
+INSERT INTO boletos (id_funciones, num_asiento, precio) VALUES(4, 1, 49.99);
+INSERT INTO boletos (id_funciones, num_asiento, precio) VALUES(4, 2, 49.99);
+INSERT INTO boletos (id_funciones, num_asiento, precio) VALUES(4, 3, 49.99);
+INSERT INTO boletos (id_funciones, num_asiento, precio) VALUES(4, 4, 49.99);
+INSERT INTO boletos (id_funciones, num_asiento, precio) VALUES(4, 5, 49.99);
+INSERT INTO boletos (id_funciones, num_asiento, precio) VALUES(4, 6, 49.99);
+INSERT INTO boletos (id_funciones, num_asiento, precio) VALUES(4, 7, 49.99);
+INSERT INTO boletos (id_funciones, num_asiento, precio) VALUES(4, 8, 49.99);
+INSERT INTO boletos (id_funciones, num_asiento, precio) VALUES(4, 9, 49.99);
+INSERT INTO boletos (id_funciones, num_asiento, precio) VALUES(4, 10, 49.99);
+
+INSERT INTO boletos (id_funciones, num_asiento, precio) VALUES(5, 1, 49.99);
+INSERT INTO boletos (id_funciones, num_asiento, precio) VALUES(5, 2, 49.99);
+INSERT INTO boletos (id_funciones, num_asiento, precio) VALUES(5, 3, 49.99);
+INSERT INTO boletos (id_funciones, num_asiento, precio) VALUES(5, 4, 49.99);
+INSERT INTO boletos (id_funciones, num_asiento, precio) VALUES(5, 5, 49.99);
+INSERT INTO boletos (id_funciones, num_asiento, precio) VALUES(5, 6, 49.99);
+INSERT INTO boletos (id_funciones, num_asiento, precio) VALUES(5, 7, 49.99);
+INSERT INTO boletos (id_funciones, num_asiento, precio) VALUES(5, 8, 49.99);
+INSERT INTO boletos (id_funciones, num_asiento, precio) VALUES(5, 9, 49.99);
+INSERT INTO boletos (id_funciones, num_asiento, precio) VALUES(5, 10, 49.99);
+
+INSERT INTO boletos (id_funciones, num_asiento, precio) VALUES(6, 1, 49.99);
+INSERT INTO boletos (id_funciones, num_asiento, precio) VALUES(6, 2, 49.99);
+INSERT INTO boletos (id_funciones, num_asiento, precio) VALUES(6, 3, 49.99);
+INSERT INTO boletos (id_funciones, num_asiento, precio) VALUES(6, 4, 49.99);
+INSERT INTO boletos (id_funciones, num_asiento, precio) VALUES(6, 5, 49.99);
+INSERT INTO boletos (id_funciones, num_asiento, precio) VALUES(6, 6, 49.99);
+INSERT INTO boletos (id_funciones, num_asiento, precio) VALUES(6, 7, 49.99);
+INSERT INTO boletos (id_funciones, num_asiento, precio) VALUES(6, 8, 49.99);
+INSERT INTO boletos (id_funciones, num_asiento, precio) VALUES(6, 9, 49.99);
+INSERT INTO boletos (id_funciones, num_asiento, precio) VALUES(6, 10, 49.99);
+
+INSERT INTO boletos (id_funciones, num_asiento, precio) VALUES(7, 1, 49.99);
+INSERT INTO boletos (id_funciones, num_asiento, precio) VALUES(7, 2, 49.99);
+INSERT INTO boletos (id_funciones, num_asiento, precio) VALUES(7, 3, 49.99);
+INSERT INTO boletos (id_funciones, num_asiento, precio) VALUES(7, 4, 49.99);
+INSERT INTO boletos (id_funciones, num_asiento, precio) VALUES(7, 5, 49.99);
+INSERT INTO boletos (id_funciones, num_asiento, precio) VALUES(7, 6, 49.99);
+INSERT INTO boletos (id_funciones, num_asiento, precio) VALUES(7, 7, 49.99);
+INSERT INTO boletos (id_funciones, num_asiento, precio) VALUES(7, 8, 49.99);
+INSERT INTO boletos (id_funciones, num_asiento, precio) VALUES(7, 9, 49.99);
+INSERT INTO boletos (id_funciones, num_asiento, precio) VALUES(7, 10, 49.99);
+
+
+INSERT INTO boletos (id_funciones, num_asiento, precio) VALUES(8, 1, 49.99);
+INSERT INTO boletos (id_funciones, num_asiento, precio) VALUES(8, 2, 49.99);
+INSERT INTO boletos (id_funciones, num_asiento, precio) VALUES(8, 3, 49.99);
+INSERT INTO boletos (id_funciones, num_asiento, precio) VALUES(8, 4, 49.99);
+INSERT INTO boletos (id_funciones, num_asiento, precio) VALUES(8, 5, 49.99);
+INSERT INTO boletos (id_funciones, num_asiento, precio) VALUES(8, 6, 49.99);
+INSERT INTO boletos (id_funciones, num_asiento, precio) VALUES(8, 7, 49.99);
+INSERT INTO boletos (id_funciones, num_asiento, precio) VALUES(8, 8, 49.99);
+INSERT INTO boletos (id_funciones, num_asiento, precio) VALUES(8, 9, 49.99);
+INSERT INTO boletos (id_funciones, num_asiento, precio) VALUES(8, 10, 49.99);
+
+
+INSERT INTO boletos (id_funciones, num_asiento, precio) VALUES(9, 1, 49.99);
+INSERT INTO boletos (id_funciones, num_asiento, precio) VALUES(9, 2, 49.99);
+INSERT INTO boletos (id_funciones, num_asiento, precio) VALUES(9, 3, 49.99);
+INSERT INTO boletos (id_funciones, num_asiento, precio) VALUES(9, 4, 49.99);
+INSERT INTO boletos (id_funciones, num_asiento, precio) VALUES(9, 5, 49.99);
+INSERT INTO boletos (id_funciones, num_asiento, precio) VALUES(9, 6, 49.99);
+INSERT INTO boletos (id_funciones, num_asiento, precio) VALUES(9, 7, 49.99);
+INSERT INTO boletos (id_funciones, num_asiento, precio) VALUES(9, 8, 49.99);
+INSERT INTO boletos (id_funciones, num_asiento, precio) VALUES(9, 9, 49.99);
+INSERT INTO boletos (id_funciones, num_asiento, precio) VALUES(9, 9, 49.99);
+INSERT INTO boletos (id_funciones, num_asiento, precio) VALUES(9, 10, 49.99);
+
+INSERT INTO boletos (id_funciones, num_asiento, precio) VALUES(10, 1, 49.99);
+INSERT INTO boletos (id_funciones, num_asiento, precio) VALUES(10, 2, 49.99);
+INSERT INTO boletos (id_funciones, num_asiento, precio) VALUES(10, 3, 49.99);
+INSERT INTO boletos (id_funciones, num_asiento, precio) VALUES(10, 4, 49.99);
+INSERT INTO boletos (id_funciones, num_asiento, precio) VALUES(10, 5, 49.99);
+INSERT INTO boletos (id_funciones, num_asiento, precio) VALUES(10, 6, 49.99);
+INSERT INTO boletos (id_funciones, num_asiento, precio) VALUES(10, 7, 49.99);
+INSERT INTO boletos (id_funciones, num_asiento, precio) VALUES(10, 8, 49.99);
+INSERT INTO boletos (id_funciones, num_asiento, precio) VALUES(10, 9, 49.99);
+INSERT INTO boletos (id_funciones, num_asiento, precio) VALUES(10, 10, 49.99);
+
+
